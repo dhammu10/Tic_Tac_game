@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Tic-Tac-Toe Game</title>
+    <style>
+        body {
+            font-family: 'Helvetica';
+            font-size: 24px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: #ccc;
+        }
+
+        td.active {
+            background-color: #00f;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <p>Click a square to start playing!</p>
+    <table>
+        <tr>
+            <td onclick="play(this)"></td>
+            <td onclick="play(this)"></td>
+            <td onclick="play(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="play(this)"></td>
+            <td onclick="play(this)"></td>
+            <td onclick="play(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="play(this)"></td>
+            <td onclick="play(this)"></td>
+            <td onclick="play(this)"></td>
+        </tr>
+    </table>
+    <script>
+        let turn = 0;
+        function play(square) {
+            if (square.innerHTML == "") {
+                if (turn % 2 == 0) {
+                    square.innerHTML = "X";
+                    square.className = "active";
+                    turn++;
+                } else {
+                    square.innerHTML = "O";
+                    square.className = "active";
+                    turn++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
